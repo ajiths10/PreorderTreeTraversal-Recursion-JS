@@ -39,12 +39,15 @@ class Node {
       }
 
 
-      //Preorder Tree Traversal
-       preOrder(roott){
-           if(roott !==null){
-               console.log(roott.value);
-               this.preOrder(roott.left);
-               this.preOrder(roott.right);
+      //PreOrder Tree Traversal
+       preOrder(currNode){
+           if(currNode !==null){
+               console.log(currNode.value);
+               //console.log(currNode)
+               this.preOrder(currNode.left);
+               this.preOrder(currNode.right);
+           }else{
+               return ;
            }
            
     }
@@ -59,9 +62,25 @@ class Node {
   a.insert(4);
   a.insert(10);
   a.insert(12);
+  a.insert(1)
   a.insert(11);
   a.insert(15);
   console.log(a.insert(8));
 
   a.preOrder(a.root);
 
+//structure
+
+    //             9
+    //         /      \
+    //        7       13
+    //      /  \      /   \
+    //     6     8    10   15
+    //    /             \
+    //   4              12
+    //  /              /
+    // 1             11
+
+
+    //output
+    // 9 7 6 4 1 8 13 10 12 11 15
